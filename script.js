@@ -15,9 +15,13 @@ let score = 20;
 document.querySelector('.number').textContent = secretNumber;
 
 document.querySelector('.check').addEventListener('click', function () {
+  //functions are values that we can use as an argument because as said above they are values
+//javascript will call this function as soon as the event happens
+
   //   console.log(document.querySelector('.guess').value);
   const guess = Number(document.querySelector('.guess').value);
   //   console.log(guess, typeof guess);
+  //when we get something from the input, it's always a string
 
   if (!guess) {
     document.querySelector('.message').textContent = 'No Number!';
@@ -40,7 +44,4 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = 0;
     }
   }
-  //when we get something from the input, it's always a string
 });
-//functions are values that we can use as an argument because as said above they are values
-//javascript will call this function as soon as the event happens
