@@ -16,18 +16,23 @@ document.querySelector('.number').textContent = secretNumber;
 
 document.querySelector('.check').addEventListener('click', function () {
   //functions are values that we can use as an argument because as said above they are values
-//javascript will call this function as soon as the event happens
+  //javascript will call this function as soon as the event happens
 
   //   console.log(document.querySelector('.guess').value);
   const guess = Number(document.querySelector('.guess').value);
   //   console.log(guess, typeof guess);
   //when we get something from the input, it's always a string
 
+  //When there is no input
   if (!guess) {
     document.querySelector('.message').textContent = 'No Number!';
-  } else if (guess === secretNumber) {
+  }
+  //When player wins
+  else if (guess === secretNumber) {
     document.querySelector('.message').textContent = 'Correct Number!';
-  } else if (guess > secretNumber) {
+  }
+  //When guess is too high
+  else if (guess > secretNumber) {
     if (score > 0) {
       document.querySelector('.message').textContent = 'too high';
       document.querySelector('.score').textContent = score--;
@@ -35,7 +40,9 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.message').textContent = 'You lost the game';
       document.querySelector('.score').textContent = 0;
     }
-  } else if (guess < secretNumber) {
+  }
+  //When guess is too low
+  else if (guess < secretNumber) {
     if (score > 0) {
       document.querySelector('.message').textContent = 'too low';
       document.querySelector('.score').textContent = score--;
